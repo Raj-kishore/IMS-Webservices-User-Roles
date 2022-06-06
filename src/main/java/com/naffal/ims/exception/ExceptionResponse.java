@@ -1,16 +1,18 @@
 package com.naffal.ims.exception;
 
+import java.util.Date;
+
 //Generic exception class for all RESTful services
 
 public class ExceptionResponse {
 	
-	private String timeStamp; 
+	private Date timeStamp; 
 	private String message; 
 	private String detail;
 	
-	public ExceptionResponse(String timeStamp, String message, String detail) {
+	public ExceptionResponse(Date date, String message, String detail) {
 		super();
-		this.timeStamp = timeStamp;
+		this.timeStamp = date;
 		this.message = message;
 		this.detail = detail;
 	} 
