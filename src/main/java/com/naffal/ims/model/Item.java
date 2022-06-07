@@ -8,8 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import org.springframework.hateoas.Link;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table(name = "Items")
+@ApiModel(description="All details about the item") //visible in swagger http://localhost:9000/v2/api-docs  
 public class Item { // POJO class
 
 	@Id
@@ -20,6 +26,7 @@ public class Item { // POJO class
 	@Column(name = "item_name")
 	@Size(min = 2, message = "{validation.name.size.too_short}")
 	@Size(max = 20, message = "{validation.name.size.too_long}")
+	@ApiModelProperty(notes="name should have 2 to 20 characters")  // http://localhost:9000/v2/api-docs
 	private String itemName;
 
 	@Column(name = "item_type")
@@ -119,6 +126,11 @@ public class Item { // POJO class
 
 	public void setItemRegisterDate(String itemRegisterDate) {
 		this.itemRegisterDate = itemRegisterDate;
+	}
+
+	public void add(Link selfLink) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
