@@ -37,8 +37,6 @@ public class ItemServiceImpl implements ItemService {
 		return itemRepository.findAll();
 	}
 
-	
-
 	@Override
 	public ResponseEntity<Item> getItemById(Long id) {
 		Item item = itemRepository.findById(id)
