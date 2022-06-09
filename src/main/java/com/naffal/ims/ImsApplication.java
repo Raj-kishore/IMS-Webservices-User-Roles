@@ -36,5 +36,10 @@ public class ImsApplication {
 		// Ref : https://www.tutorialspoint.com/spring_boot/spring_boot_runners.htm
 		logger.debug("Runner called");
 	}
+	
+	
+	// only /health is enables by default. Other actuator end points are disabled due to security concerns.
+	// refer the link to enable the rest. 
+	// https://www.baeldung.com/spring-boot-actuators
 
 }
