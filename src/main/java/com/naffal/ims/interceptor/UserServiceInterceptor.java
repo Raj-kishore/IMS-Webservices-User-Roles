@@ -8,7 +8,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 @Component
-public class ItemServiceInterceptor implements HandlerInterceptor {
+public class UserServiceInterceptor implements HandlerInterceptor {
 	// Difference in filters and interceptors : https://stackoverflow.com/a/71227949 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)

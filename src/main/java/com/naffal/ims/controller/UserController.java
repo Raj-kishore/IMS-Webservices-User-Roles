@@ -21,16 +21,16 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*; //linkto() method
 
 
-import com.naffal.ims.model.Item;
-import com.naffal.ims.service.ItemServiceImpl;
+import com.naffal.ims.model.User;
+import com.naffal.ims.service.UserServiceImpl;
 
 @CrossOrigin(origins = "http://localhost:5000")
 @RestController
 @RequestMapping("/api/v1/")
-public class ItemController {
+public class UserController {
 
 	@Autowired
-	private ItemServiceImpl itemServiceImpl;
+	private UserServiceImpl userServiceImpl;
 	
 	//Pending things for this app
 	
@@ -45,9 +45,9 @@ public class ItemController {
 	
 	
 
-	// get all items
-	@GetMapping("/items")
-	public List<Item> getAllItems() {
+	// get all users
+	@GetMapping("/users")
+	public List<User> getAllUsers() {
 		
 //	    List<Item> allItems = itemServiceImpl.getItems();
 //
@@ -65,37 +65,37 @@ public class ItemController {
 //	    Link link = linkTo(CustomerController.class).withSelfRel();
 //	    CollectionModel<Customer> result = CollectionModel.of(allCustomers, link);
 //	    return result;
-		return itemServiceImpl.getItems();
+		return userServiceImpl.getUsers();
 	}
 
-	// create item rest api
-	@PostMapping("/items")
-	public Item createItem(@Valid @RequestBody Item item) {
-		return itemServiceImpl.createItem(item);
+	// create user rest api
+	@PostMapping("/users")
+	public User createUser(@Valid @RequestBody User user) {
+		return userServiceImpl.createUser(user);
 	}
 
-	// get item by id rest api
-	@GetMapping("/items/{id}")
-	public ResponseEntity<Item> getItemById(@PathVariable Long id) {
-		return itemServiceImpl.getItemById(id);
+	// get user by id rest api
+	@GetMapping("/users/{id}")
+	public ResponseEntity<User> getUserById(@PathVariable Long id) {
+		return userServiceImpl.getUserById(id);
 	}
 
-	// update item rest api
-	@PutMapping("/items/{id}")
-	public ResponseEntity<Item> updateItem(@PathVariable Long id, @RequestBody Item itemDetails) {
-		return itemServiceImpl.updateItem(id, itemDetails);
+	// update user rest api
+	@PutMapping("/users/{id}")
+	public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User userDetails) {
+		return userServiceImpl.updateUser(id, userDetails);
 	}
 
-	// delete all items rest api
-	@DeleteMapping("/items")
-	public ResponseEntity<Map<String, Boolean>> deleteAllItems() {
-		return itemServiceImpl.deleteAll();
+	// delete all users rest api
+	@DeleteMapping("/users")
+	public ResponseEntity<Map<String, Boolean>> deleteAllUsers() {
+		return userServiceImpl.deleteAll();
 	}
 
-	// delete item rest api
-	@DeleteMapping("/items/{id}")
-	public ResponseEntity<Map<String, Boolean>> deleteItem(@PathVariable Long id) {
-		return itemServiceImpl.deleteItem(id);
+	// delete user rest api
+	@DeleteMapping("/users/{id}")
+	public ResponseEntity<Map<String, Boolean>> deleteUser(@PathVariable Long id) {
+		return userServiceImpl.deleteUser(id);
 	}
 
 }

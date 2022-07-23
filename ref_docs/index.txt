@@ -1,0 +1,3 @@
+
+PostgreSQL installation guide ubuntu.. 
+https://stackoverflow.com/questions/53267642/create-new-local-server-in-pgadmin

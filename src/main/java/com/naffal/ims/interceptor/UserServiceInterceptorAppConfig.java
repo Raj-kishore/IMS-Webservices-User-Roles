@@ -6,9 +6,9 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Component
-public class ItemServiceInterceptorAppConfig extends WebMvcConfigurerAdapter {
+public class UserServiceInterceptorAppConfig extends WebMvcConfigurerAdapter {
    @Autowired
-   ItemServiceInterceptor itemServiceInterceptor;
+   UserServiceInterceptor itemServiceInterceptor;
 
    @Override
    public void addInterceptors(InterceptorRegistry registry) {
