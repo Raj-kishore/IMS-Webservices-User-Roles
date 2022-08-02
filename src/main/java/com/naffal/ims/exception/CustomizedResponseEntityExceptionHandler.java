@@ -45,4 +45,6 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 		// returning exception structure and specific status
 		return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
 	}
+	
+	
 }

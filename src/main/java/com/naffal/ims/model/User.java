@@ -6,12 +6,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Size;
 
 import org.springframework.hateoas.Link;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "Users", uniqueConstraints={@UniqueConstraint(columnNames={"user_name"})})
 //@ApiModel(description="All details about the item") //visible in swagger http://localhost:9000/v2/api-docs  
 public class User { // POJO class
 
