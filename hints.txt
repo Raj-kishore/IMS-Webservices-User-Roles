@@ -1,0 +1,3 @@
+Setting up SSH for git 
+
+https://medium.com/featurepreneur/setting-up-ssh-key-with-github-for-ubuntu-cd8f2fabf25b
